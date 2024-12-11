@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Quotes to Lines</title>
+    <script>
+        function addQuotes() {
+            const input = document.getElementById("inputText").value;
+            const lines = input.split('\n').filter(line => line.trim() !== '');
+            const quotedLines = lines.map(line => `"${line}",`).join('\n');
+            document.getElementById("outputText").value = quotedLines;
+        }
+    </script>
+</head>
+<body>
+    <h1>Add Quotes to Each Line</h1>
+    <textarea id="inputText" rows="10" cols="50" placeholder="Enter your text here..."></textarea>
+    <br>
+    <button onclick="addQuotes()">Add Quotes</button>
+    <br>
+    <textarea id="outputText" rows="10" cols="50" readonly placeholder="Output will appear here..."></textarea>
+</body>
+</html>
